@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import "@testing-library/jest-dom/extend-expect";
 
 import { getByText } from "@testing-library/dom";
@@ -8,7 +12,7 @@ test("examples of some things", async () => {
     const container = await printUsers();
     document.body.appendChild(container);
 
-    const user = getByText(containe, "Current users");
+    const user = getByText(container, "Current users");
 
     expect(user).toBeInTheDocument();
 });
